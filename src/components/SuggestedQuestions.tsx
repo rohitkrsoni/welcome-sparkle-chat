@@ -7,23 +7,23 @@ interface SuggestedQuestionsProps {
 
 const questions = [
   {
-    icon: Sparkles,
-    text: "What can you help me with?",
+    icon: TrendingUp,
+    text: "What was our revenue growth in Q4?",
     gradient: "from-primary/10 to-primary/5"
   },
   {
-    icon: TrendingUp,
-    text: "Show me the latest trends",
+    icon: Sparkles,
+    text: "Show me our expense breakdown for last quarter",
     gradient: "from-accent/10 to-accent/5"
   },
   {
     icon: Lightbulb,
-    text: "Give me creative ideas",
+    text: "What are our top profit recommendations?",
     gradient: "from-primary/10 to-primary/5"
   },
   {
     icon: HelpCircle,
-    text: "How does this work?",
+    text: "Analyze our cash flow trends",
     gradient: "from-accent/10 to-accent/5"
   }
 ];
