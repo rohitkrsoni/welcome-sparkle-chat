@@ -10,10 +10,20 @@ interface Message {
   content: string;
 }
 
-const ChatInterface = () => {
+interface ChatInterfaceProps {
+  onReset?: () => void;
+}
+
+const ChatInterface = ({ onReset }: ChatInterfaceProps) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleReset = () => {
+    setMessages([]);
+    setInput("");
+    onReset?.();
+  };
 
   const getHardcodedResponse = (question: string): string => {
     const lowerQuestion = question.toLowerCase();
@@ -164,8 +174,8 @@ Implementing these recommendations could increase net profit by 25-30% within 6 
             <SuggestedQuestions onQuestionClick={handleQuestionClick} />
           </>
         ) : (
-          <ScrollArea className="flex-1 w-full max-h-[60vh]">
-            <div className="space-y-4 pr-4">
+          <ScrollArea className="h-[60vh] w-full">
+            <div className="space-y-4 pr-4 pb-4">
               {messages.map((message, index) => (
                 <div
                   key={index}

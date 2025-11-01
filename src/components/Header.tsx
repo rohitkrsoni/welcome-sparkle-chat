@@ -1,7 +1,11 @@
-import { Bell, User } from "lucide-react";
+import { Bell, User, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Header = () => {
+interface HeaderProps {
+  onNewChat?: () => void;
+}
+
+const Header = ({ onNewChat }: HeaderProps) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b bg-card/80 backdrop-blur-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -13,6 +17,16 @@ const Header = () => {
         </div>
         
         <div className="flex items-center gap-2">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={onNewChat}
+            className="gap-2"
+          >
+            <Plus className="h-4 w-4" />
+            <span className="hidden sm:inline">New Chat</span>
+          </Button>
+          
           <Button
             variant="ghost"
             size="icon"
