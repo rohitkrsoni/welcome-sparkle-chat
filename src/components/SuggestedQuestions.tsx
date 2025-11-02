@@ -30,7 +30,7 @@ const questions = [
 
 const SuggestedQuestions = ({ onQuestionClick }: SuggestedQuestionsProps) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-3xl">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-3xl mx-auto">
       {questions.map((question, index) => {
         const Icon = question.icon;
         return (
